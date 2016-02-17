@@ -1,6 +1,8 @@
 FROM centos:7
 
-RUN yum install -y wget
+RUN yum install -y wget make git && \
+  yum clean all
+
 ENV GOLANG_VERSION 1.5
 RUN wget https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz && \
   tar -C /usr/local -xzf go$GOLANG_VERSION.linux-amd64.tar.gz && \
@@ -8,12 +10,6 @@ RUN wget https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz && \
 
 ENV GLIDE_VERSION 0.9.0-rc1
 ENV GO15VENDOREXPERIMENT 1
-
-#RUN wget https://github.com/Masterminds/glide/releases/download/${GLIDE_VERSION}/glide-${GLIDE_VERSION}-linux-amd64.tar.gz && \
-#  tar -C /usr/local -xzf glide-${GLIDE_VERSION}-linux-amd64.tar.gz && \
-#  rm glide-${GLIDE_VERSION}-linux-amd64.tar.gz && \
-#  mv /usr/local
-
 RUN wget https://github.com/Masterminds/glide/releases/download/${GLIDE_VERSION}/glide-${GLIDE_VERSION}-linux-amd64.tar.gz && \
   tar -xzf glide-${GLIDE_VERSION}-linux-amd64.tar.gz && \
   mv linux-amd64 /usr/local/glide && \
