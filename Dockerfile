@@ -1,9 +1,9 @@
 FROM centos:7
 
-RUN yum install -y wget make git hg svn bzr && \
+RUN yum install -y wget make git hg svn bzr gcc && \
   yum clean all
 
-ENV GOLANG_VERSION 1.5
+ENV GOLANG_VERSION 1.5.3
 RUN wget https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz && \
   tar -C /usr/local -xzf go$GOLANG_VERSION.linux-amd64.tar.gz && \
   rm go${GOLANG_VERSION}.linux-amd64.tar.gz
@@ -19,3 +19,6 @@ ENV PATH $PATH:/usr/local/go/bin
 ENV PATH $PATH:/usr/local/glide
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
+
+RUN mkdir -p /go/src/
+RUN ln -s /home/jenkins/workspace/workspace /go/src/ 
