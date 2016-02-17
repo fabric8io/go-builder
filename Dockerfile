@@ -1,6 +1,6 @@
 FROM centos:7
 
-RUN yum install -y wget make git && \
+RUN yum install -y wget make git hg svn bzr && \
   yum clean all
 
 ENV GOLANG_VERSION 1.5
