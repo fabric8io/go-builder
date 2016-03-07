@@ -19,6 +19,7 @@ ENV PATH $PATH:/usr/local/go/bin
 ENV PATH $PATH:/usr/local/glide
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
+ENV PATH $PATH:/go/bin
 
 RUN mkdir -p /go/src/
 RUN ln -s /home/jenkins/workspace/workspace /go/src/ 
