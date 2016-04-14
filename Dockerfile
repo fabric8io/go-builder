@@ -3,7 +3,7 @@ FROM centos:7
 RUN yum install -y wget make git hg svn bzr gcc docker && \
   yum clean all
 
-ENV GOLANG_VERSION 1.6.1
+ENV GOLANG_VERSION 1.6
 RUN wget https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz && \
   tar -C /usr/local -xzf go$GOLANG_VERSION.linux-amd64.tar.gz && \
   rm go${GOLANG_VERSION}.linux-amd64.tar.gz
