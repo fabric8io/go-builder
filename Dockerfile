@@ -18,8 +18,5 @@ RUN wget https://github.com/Masterminds/glide/releases/download/${GLIDE_VERSION}
 ENV PATH $PATH:/usr/local/go/bin
 ENV PATH $PATH:/usr/local/glide
 ENV GOROOT /usr/local/go
-#ENV GOPATH /go
 ENV PATH $PATH:/go/bin
-
-RUN mkdir -p /go/src/
-RUN ln -s /home/jenkins/workspace/workspace /go/src/
+ENV GOPATH=/go
