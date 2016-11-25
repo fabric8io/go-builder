@@ -8,7 +8,7 @@ RUN wget https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz && \
   tar -C /usr/local -xzf go$GOLANG_VERSION.linux-amd64.tar.gz && \
   rm go${GOLANG_VERSION}.linux-amd64.tar.gz
 
-ENV GLIDE_VERSION 0.12.2
+ENV GLIDE_VERSION v0.12.3
 ENV GO15VENDOREXPERIMENT 1
 RUN wget https://github.com/Masterminds/glide/releases/download/$GLIDE_VERSION/glide-$GLIDE_VERSION-linux-amd64.tar.gz && \
   tar -xzf glide-$GLIDE_VERSION-linux-amd64.tar.gz && \
