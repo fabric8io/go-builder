@@ -15,8 +15,15 @@ RUN wget https://github.com/Masterminds/glide/releases/download/$GLIDE_VERSION/g
   mv linux-amd64 /usr/local/glide && \
   rm glide-$GLIDE_VERSION-linux-amd64.tar.gz
 
+ENV GH_RELEASE_VERSION 2.2.1
+RUN wget https://github.com/progrium/gh-release/releases/download/v$GH_RELEASE_VERSION/gh-release_${GH_RELEASE_VERSION}_linux_x86_64.tgz && \
+  tar -xzf gh-release_${GH_RELEASE_VERSION}_linux_x86_64.tgz && \
+  mv gh-release /usr/local/gh-release && \
+  rm gh-release_${GH_RELEASE_VERSION}_linux_x86_64.tgz
+
 ENV PATH $PATH:/usr/local/go/bin
 ENV PATH $PATH:/usr/local/glide
+ENV PATH $PATH:/usr/local/
 ENV GOROOT /usr/local/go
 ENV PATH $PATH:/go/bin
 ENV GOPATH=/go
