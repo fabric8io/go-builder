@@ -27,3 +27,5 @@ ENV PATH $PATH:/usr/local/
 ENV GOROOT /usr/local/go
 ENV PATH $PATH:/go/bin
 ENV GOPATH=/go
+
+RUN go get github.com/fabric8io/gobump
