@@ -1,6 +1,6 @@
 FROM centos:7
 
-RUN yum install -y wget make git hg svn bzr gcc docker && \
+RUN yum install -y wget make hg svn bzr gcc docker https://centos7.iuscommunity.org/ius-release.rpm && yum install -y git2u && \
   yum clean all
 
 ENV GOLANG_VERSION 1.7.1
